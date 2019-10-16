@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title text-center>
+      <p class="title">List Items</p>
+    </ion-title>
+    <div class="button">
+      <ion-fab vertical="top" horizontal="end" slot="fixed">
+              <ion-fab-button color="danger" (click)="addItem()">
+                <ion-icon name="add"></ion-icon>
+              </ion-fab-button>
+      </ion-fab>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list>
+    <ion-item-sliding *ngFor="let item of items">
+      <ion-item (click)="edit(item)">
+        {{item.title}}
+      </ion-item>
+      <ion-item-options>
+       <ion-button color="danger" (click)="removeItem(item)"><ion-icon name="trash"></ion-icon> Delete</ion-button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+  <p>{{ data }}</p>
+
+  <!--<ion-button expand="full" (click)="loadSpecialInfo()">Load Special Info</ion-button>-->
+  <ion-button expand="full" (click)="logout()">Logout</ion-button>
+
+</ion-content>

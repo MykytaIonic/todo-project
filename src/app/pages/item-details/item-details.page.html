@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title text-center>Item Details</ion-title>
+    <div class="button">
+      <ion-fab vertical="top" horizontal="start" slot="fixed">
+              <ion-button (click)="toPreviousPage()">List Items</ion-button>
+      </ion-fab>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+
+        <ion-item floating-label>
+          <ion-label position="floating">Title</ion-label>
+          <ion-input type="text" name="title" [(ngModel)]="item.title"></ion-input>
+        </ion-item>
+
+        <ion-item floating-label>
+          <ion-label position="floating">Description</ion-label>
+          <ion-textarea placeholder="Enter more information here..." [(ngModel)]="item.description" name="description"></ion-textarea>
+        </ion-item>
+
+        <ion-toggle slot="start" name="blueberry" checked></ion-toggle>
+
+  </ion-list>
+</ion-content>
